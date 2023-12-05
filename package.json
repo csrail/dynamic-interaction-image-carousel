@@ -1,7 +1,7 @@
 {
-  "name": "UPDATE NAME",
+  "name": "npm@csrail/image-carousel",
   "version": "1.0.0",
-  "description": "UPDATE DESCRIPTION",
+  "description": "a simple image carousel written in vanilla js",
   "private": true,
   "main": "src/index.js",
   "scripts": {

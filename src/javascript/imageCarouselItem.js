@@ -1,13 +1,19 @@
-const imageCarouselItem = (obj = {}) => {
-   const { imageName, imageSource, altName, imageHeight, imageWidth } = obj
+const ImageCarouselItem = (obj = {}) => {
+    const { imageName, imageSource, altName, imageHeight, imageWidth } = obj;
 
-    const getimageName = () => imageName
-    const getImageSource = () => imageSource
-    const getAltName = () => altName
-    const getImageHeight = () => imageHeight
-    const getImageWidth = () => imageWidth
+    const getImageName = () => imageName;
+    const getImageSource = () => imageSource;
+    const getAltName = () => altName;
+    const getImageHeight = () => imageHeight;
+    const getImageWidth = () => imageWidth;
 
-    return { getimageName, getImageSource, getAltName, getImageHeight, getImageWidth }
-}
+    return {
+        getImageName,
+        getImageSource,
+        getAltName,
+        getImageHeight,
+        getImageWidth,
+    };
+};
 
-export default imageCarouselItem
+export default ImageCarouselItem;

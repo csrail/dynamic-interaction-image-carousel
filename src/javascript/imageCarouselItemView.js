@@ -1,18 +1,13 @@
-import ImageCarouselItem from "./imageCarouselItem";
-
-const ImageCarouselItemView = (imageCarouselItem = ImageCarouselItem()) => {
-    const { getImageName, getImageSource, getImageHeight, getImageWidth } =
-        imageCarouselItem;
-
-    const buildImage = () => {
-        const image = getImageSource();
-        image.height = getImageHeight();
-        image.width = getImageWidth();
+const ImageCarouselItemView = () => {
+    const buildImage = (imageCarouselItem) => {
+        const image = imageCarouselItem.getImageSource();
+        image.height = imageCarouselItem.getImageHeight();
+        image.width = imageCarouselItem.getImageWidth();
 
         return image;
     };
 
-    const displayView = () => buildImage();
+    const displayView = (imageCarouselItem) => buildImage(imageCarouselItem);
 
     return { displayView };
 };

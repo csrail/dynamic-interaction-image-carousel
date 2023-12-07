@@ -1,11 +1,10 @@
-const ImageCarouselView = (
-    imageCarouselItemView = {},
-    imageCarouselItem = {},
-) => {
-    const buildImageCarousel = (view, item) => {
+const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
+    const imageCarouselItemViews = imageCarouselItemViewsObject;
+
+    const buildImageCarousel = (views) => {
         const component = document.createElement("div");
         component.classList.add("image-item");
-        component.appendChild(view.displayView(item));
+        component.appendChild(views.getView());
 
         return component;
     };
@@ -14,10 +13,7 @@ const ImageCarouselView = (
         const container = document.createElement("div");
         const imageCarouselMainContainer = document.createElement("div");
         const imageCarouselContainer = document.createElement("div");
-        const imageCarousel = buildImageCarousel(
-            imageCarouselItemView,
-            imageCarouselItem,
-        );
+        const imageCarousel = buildImageCarousel(imageCarouselItemViews);
 
         const imageCarouselLeftArrowContainer = document.createElement("div");
         const imageCarouselRightArrowContainer = document.createElement("div");

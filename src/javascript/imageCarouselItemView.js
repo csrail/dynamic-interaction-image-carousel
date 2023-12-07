@@ -7,9 +7,9 @@ const ImageCarouselItemView = () => {
         return image;
     };
 
-    const displayView = (imageCarouselItem) => buildImage(imageCarouselItem);
+    const getView = (imageCarouselItem) => buildImage(imageCarouselItem);
 
-    return { displayView };
+    return { getView };
 };
 
 export default ImageCarouselItemView;

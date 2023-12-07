@@ -1,12 +1,16 @@
-import { imageCarouselItemData1 } from "./data/data";
+import { imageCarouselItemData1, imageCarouselItemData2 } from "./data/data";
 import ImageCarouselItem from "./javascript/imageCarouselItem";
 import ImageCarouselItemView from "./javascript/imageCarouselItemView";
 
 (() => {
-    const carouselItemView1 = ImageCarouselItemView();
-    const carouselItem1 = ImageCarouselItem(imageCarouselItemData1);
+    const carouselItemView = ImageCarouselItemView();
+    const carouselItem = ImageCarouselItem();
 
-    document.body.appendChild(carouselItemView1.displayView(carouselItem1));
+    carouselItem.setState(imageCarouselItemData1);
+    document.body.appendChild(carouselItemView.displayView(carouselItem));
+
+    carouselItem.setState(imageCarouselItemData2);
+    document.body.appendChild(carouselItemView.displayView(carouselItem));
 
     return {};
 })();

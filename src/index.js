@@ -1,3 +1,5 @@
+import "./stylesheets/style.css";
+
 import {
     imageCarouselItemData1,
     imageCarouselItemData2,

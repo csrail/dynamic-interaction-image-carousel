@@ -7,9 +7,22 @@ const ImageCarouselItemView = () => {
         return image;
     };
 
-    const getView = (imageCarouselItem) => buildImage(imageCarouselItem);
+    const buildVisibleImage = (imageCarouselItem) => {
+        const image = buildImage(imageCarouselItem);
+        image.classList.add("hidden");
+        image.classList.add("visible");
 
-    return { getView };
+        return image;
+    };
+
+    const buildHiddenImage = (imageCarouselItem) => {
+        const image = buildImage(imageCarouselItem);
+        image.classList.add("hidden");
+
+        return image;
+    };
+
+    return { buildVisibleImage, buildHiddenImage };
 };
 
 export default ImageCarouselItemView;

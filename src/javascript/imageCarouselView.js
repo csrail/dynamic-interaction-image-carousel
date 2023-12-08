@@ -9,6 +9,24 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
         return component;
     };
 
+    const processImages = (imageElements) => {
+        let indexPosition;
+
+        imageElements.forEach((element, index) => {
+            if (element.classList.contains("visible")) {
+                element.classList.remove("visible");
+                indexPosition = index;
+            }
+
+            if (index === indexPosition + 1) {
+                element.classList.add("visible");
+            } else if (indexPosition + 1 === imageElements.length) {
+                imageElements[0].classList.add("visible");
+                indexPosition = 0;
+            }
+        });
+    };
+
     const buildImageCarouselComponent = () => {
         const container = document.createElement("div");
         const imageCarouselMainContainer = document.createElement("div");
@@ -40,7 +58,7 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
         return buildImageCarouselComponent();
     };
 
-    return { displayView };
+    return { displayView, processImages };
 };
 
 export default ImageCarouselView;

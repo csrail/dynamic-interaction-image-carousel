@@ -5,3 +5,7 @@
 .visible {
     display: block;
 }
+
+.right-arrow, .left-arrow {
+    font-size: 4em;
+}

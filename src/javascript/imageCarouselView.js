@@ -38,7 +38,7 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
                 "img[class~='visible']",
             );
             visibleImage.classList.remove("visible");
-            if (indexPosition + 1 === imageCarousel.length) {
+            if (indexPosition + 1 >= imageCarousel.length) {
                 indexPosition = 0;
             } else {
                 indexPosition += 1;

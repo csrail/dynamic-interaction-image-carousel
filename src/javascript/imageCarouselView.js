@@ -50,13 +50,41 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
         return component;
     };
 
+    const buildLeftArrow = () => {
+        const component = document.createElement("div");
+        const arrowElement = document.createElement("div");
+        arrowElement.textContent = "<";
+        arrowElement.classList.add("left-arrow");
+
+        arrowElement.addEventListener("click", () => {
+            const imageCarousel = [...document.querySelectorAll("img")];
+            const visibleImage = document.querySelector(
+                "img[class~='visible']",
+            );
+
+            visibleImage.classList.remove("visible");
+
+            if (indexPosition === 0) {
+                indexPosition = imageCarousel.length - 1;
+                imageCarousel[indexPosition].classList.add("visible");
+            } else {
+                indexPosition -= 1;
+                imageCarousel[indexPosition].classList.add("visible");
+            }
+        });
+
+        component.appendChild(arrowElement);
+
+        return component;
+    };
+
     const buildImageCarouselComponent = () => {
         const container = document.createElement("div");
         const imageCarouselMainContainer = document.createElement("div");
         const imageCarouselContainer = document.createElement("div");
         const imageCarousel = buildImageCarousel(imageCarouselItemViews);
 
-        const imageCarouselLeftArrowContainer = document.createElement("div");
+        const imageCarouselLeftArrowContainer = buildLeftArrow();
         const imageCarouselRightArrowContainer = buildRightArrow();
 
         const imageCarouselSecondaryContainer = document.createElement("div");

@@ -29,7 +29,7 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
     const buildRightArrow = () => {
         const component = document.createElement("div");
         const arrowElement = document.createElement("div");
-        arrowElement.classList.add(".right-arrow");
+        arrowElement.classList.add("right-arrow");
         arrowElement.textContent = ">";
 
         arrowElement.addEventListener("click", () => {

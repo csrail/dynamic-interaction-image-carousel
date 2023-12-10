@@ -11,19 +11,17 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
     };
 
     const processImages = (imageElements) => {
-        imageElements.forEach((element, index) => {
-            if (element.classList.contains("visible")) {
-                element.classList.remove("visible");
-                indexPosition = index;
-            }
+        const imageCarousel = [...imageElements];
+        const visibleImage = document.querySelector("img[class~='visible']");
 
-            if (index === indexPosition + 1) {
-                element.classList.add("visible");
-            } else if (indexPosition + 1 === imageElements.length) {
-                imageElements[0].classList.add("visible");
-                indexPosition = 0;
-            }
-        });
+        visibleImage.classList.remove("visible");
+        if (indexPosition + 1 >= imageCarousel.length) {
+            indexPosition = 0;
+        } else {
+            indexPosition += 1;
+        }
+
+        imageCarousel[indexPosition].classList.add("visible");
     };
 
     const buildRightArrow = () => {

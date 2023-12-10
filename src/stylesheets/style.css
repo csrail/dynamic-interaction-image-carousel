@@ -9,3 +9,8 @@
 .right-arrow, .left-arrow {
     font-size: 4em;
 }
+
+.main-container {
+    display: flex;
+    align-items: center;
+}

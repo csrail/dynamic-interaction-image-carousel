@@ -81,6 +81,7 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
     const buildImageCarouselComponent = () => {
         const container = document.createElement("div");
         const imageCarouselMainContainer = document.createElement("div");
+
         const imageCarouselContainer = document.createElement("div");
         const imageCarousel = buildImageCarousel(imageCarouselItemViews);
 
@@ -89,6 +90,8 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
 
         const imageCarouselSecondaryContainer = document.createElement("div");
         const imageCarouselDots = document.createElement("div");
+
+        imageCarouselMainContainer.classList.add("main-container");
 
         imageCarouselContainer.appendChild(imageCarousel);
 

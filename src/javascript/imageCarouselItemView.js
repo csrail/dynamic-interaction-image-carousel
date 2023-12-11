@@ -7,17 +7,19 @@ const ImageCarouselItemView = () => {
         return image;
     };
 
-    const buildVisibleImage = (imageCarouselItem) => {
+    const buildVisibleImage = (imageCarouselItem, index) => {
         const image = buildImage(imageCarouselItem);
         image.classList.add("hidden");
         image.classList.add("visible");
+        image.setAttribute("data-image-index", index);
 
         return image;
     };
 
-    const buildHiddenImage = (imageCarouselItem) => {
+    const buildHiddenImage = (imageCarouselItem, index) => {
         const image = buildImage(imageCarouselItem);
         image.classList.add("hidden");
+        image.setAttribute("data-image-index", index);
 
         return image;
     };

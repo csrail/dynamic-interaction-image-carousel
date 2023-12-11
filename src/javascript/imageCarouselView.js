@@ -92,6 +92,17 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
         return component;
     };
 
+    const buildDots = (imageCount) => {
+        const component = document.createElement("div");
+        for (let i = 0; i < imageCount; i += 1) {
+            const dotElement = document.createElement("span");
+            dotElement.classList.add("dot");
+            dotElement.setAttribute("data-image-index", i.toString());
+            component.appendChild(dotElement);
+        }
+        return component;
+    };
+
     const buildImageCarouselComponent = () => {
         const container = document.createElement("div");
         const imageCarouselMainContainer = document.createElement("div");
@@ -103,9 +114,12 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
         const imageCarouselRightArrowContainer = buildRightArrow();
 
         const imageCarouselSecondaryContainer = document.createElement("div");
-        const imageCarouselDots = document.createElement("div");
+        const imageCarouselDots = buildDots(
+            imageCarouselItemViews.getImageCount(),
+        );
 
         imageCarouselMainContainer.classList.add("main-container");
+        imageCarouselSecondaryContainer.classList.add("secondary-container");
 
         imageCarouselContainer.appendChild(imageCarousel);
 

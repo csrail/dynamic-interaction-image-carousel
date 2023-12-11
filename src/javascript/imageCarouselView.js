@@ -118,6 +118,7 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
             imageCarouselItemViews.getImageCount(),
         );
 
+        container.classList.add("image-carousel-container");
         imageCarouselMainContainer.classList.add("main-container");
         imageCarouselSecondaryContainer.classList.add("secondary-container");
 

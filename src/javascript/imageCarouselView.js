@@ -1,6 +1,7 @@
 const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
     const imageCarouselItemViews = imageCarouselItemViewsObject;
     let indexPosition = 0;
+    let intervalId;
 
     const buildImageCarousel = (views) => {
         const component = document.createElement("div");
@@ -24,6 +25,17 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
         imageCarousel[indexPosition].classList.add("visible");
     };
 
+    const setProcessImagesInterval = () => {
+        const imageCarousel = [...document.querySelectorAll("img")];
+        intervalId = setInterval(processImages, 5000, imageCarousel);
+        return intervalId;
+    };
+
+    const clearProcessImagesInterval = () => {
+        clearInterval(intervalId);
+        setProcessImagesInterval();
+    };
+
     const buildRightArrow = () => {
         const component = document.createElement("div");
         const arrowElement = document.createElement("div");
@@ -43,6 +55,7 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
             }
 
             imageCarousel[indexPosition].classList.add("visible");
+            clearProcessImagesInterval(intervalId);
         });
 
         component.appendChild(arrowElement);
@@ -112,7 +125,7 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
         return buildImageCarouselComponent();
     };
 
-    return { displayView, processImages };
+    return { displayView, setProcessImagesInterval };
 };
 
 export default ImageCarouselView;

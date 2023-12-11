@@ -23,8 +23,7 @@ import ImageCarouselView from "./javascript/imageCarouselView";
     );
 
     document.body.appendChild(imageCarouselView.displayView());
-    const imageNodeList = document.querySelectorAll("img");
-    setInterval(imageCarouselView.processImages, 2000, imageNodeList);
+    imageCarouselView.setProcessImagesInterval();
 
     return {};
 })();

@@ -1,0 +1,1 @@
+.bug: on hard refresh, when switching between images, a white space will appear very briefly before the next image appears, probably something to do with display option, try scaleY?

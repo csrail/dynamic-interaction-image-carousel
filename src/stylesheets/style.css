@@ -10,9 +10,25 @@
     font-size: 4em;
 }
 
+.image-carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .main-container {
     display: flex;
     align-items: center;
+}
+
+.secondary-container {
+    display: flex;
+}
+
+.secondary-container > div {
+    display: flex;
+    padding: 1em 0 1em 0;
+    gap: 1em;
 }
 
 .dot {

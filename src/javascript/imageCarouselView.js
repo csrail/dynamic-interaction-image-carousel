@@ -84,6 +84,7 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
                 indexPosition -= 1;
                 imageCarousel[indexPosition].classList.add("visible");
             }
+            clearProcessImagesInterval(intervalId);
         });
 
         component.appendChild(arrowElement);

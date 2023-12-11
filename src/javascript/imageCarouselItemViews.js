@@ -2,6 +2,10 @@ const ImageCarouselItemViews = (
     imageCarouselItemView,
     ...imageCarouselItems
 ) => {
+    const imageCount = imageCarouselItems.length;
+
+    const getImageCount = () => imageCount;
+
     const getView = () => {
         const component = document.createDocumentFragment();
         let count = 0;
@@ -21,7 +25,7 @@ const ImageCarouselItemViews = (
         return component;
     };
 
-    return { getView };
+    return { getView, getImageCount };
 };
 
 export default ImageCarouselItemViews;

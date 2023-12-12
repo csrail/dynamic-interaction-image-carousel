@@ -16,6 +16,18 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
         return component;
     };
 
+    const setActiveDot = () => {
+        const currentActiveDot = document.querySelector(
+            "span[class~='active-dot']",
+        );
+        currentActiveDot.classList.remove("active-dot");
+
+        const activeDot = document.querySelector(
+            `span[data-image-index='${indexPosition}']`,
+        );
+        activeDot.classList.add("active-dot");
+    };
+
     const processImages = (imageElements) => {
         const imageCarousel = [...imageElements];
         const visibleImage = document.querySelector("img[class~='visible']");
@@ -28,6 +40,7 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
         }
 
         imageCarousel[indexPosition].classList.add("visible");
+        setActiveDot();
     };
 
     const setProcessImagesInterval = () => {
@@ -60,6 +73,7 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
             }
 
             imageCarousel[indexPosition].classList.add("visible");
+            setActiveDot();
             clearProcessImagesInterval(intervalId);
         });
 
@@ -89,6 +103,7 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
                 indexPosition -= 1;
                 imageCarousel[indexPosition].classList.add("visible");
             }
+            setActiveDot();
             clearProcessImagesInterval(intervalId);
         });
 
@@ -121,6 +136,7 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
                 selectedImage.classList.add("visible");
                 updateIndexPosition(+imageIndex);
 
+                setActiveDot();
                 clearProcessImagesInterval();
             });
         }

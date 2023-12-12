@@ -3,6 +3,11 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
     let indexPosition = 0;
     let intervalId;
 
+    const updateIndexPosition = (newIndex) => {
+        indexPosition = newIndex;
+        return indexPosition;
+    };
+
     const buildImageCarousel = (views) => {
         const component = document.createElement("div");
         component.classList.add("image-item");
@@ -111,7 +116,7 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
                 currentImage.classList.remove("visible");
 
                 selectedImage.classList.add("visible");
-                indexPosition = +imageIndex;
+                updateIndexPosition(+imageIndex);
 
                 clearProcessImagesInterval();
             });

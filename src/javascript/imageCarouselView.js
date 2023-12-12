@@ -99,6 +99,22 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
             dotElement.classList.add("dot");
             dotElement.setAttribute("data-image-index", i.toString());
             component.appendChild(dotElement);
+
+            dotElement.addEventListener("click", () => {
+                const { imageIndex } = dotElement.dataset;
+                const selectedImage = document.querySelector(
+                    `img[data-image-index='${imageIndex}']`,
+                );
+                const currentImage = document.querySelector(
+                    "img[class~='visible']",
+                );
+                currentImage.classList.remove("visible");
+
+                selectedImage.classList.add("visible");
+                indexPosition = +imageIndex;
+
+                clearProcessImagesInterval();
+            });
         }
         return component;
     };

@@ -6,7 +6,8 @@
     display: block;
 }
 
-.right-arrow, .left-arrow {
+.right-arrow,
+.left-arrow {
     font-size: 4em;
 }
 
@@ -37,4 +38,8 @@
     height: 2em;
     width: 2em;
     border-radius: 50%;
+}
+
+.active-dot {
+    background-color: palevioletred;
 }

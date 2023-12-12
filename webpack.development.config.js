@@ -9,6 +9,7 @@ module.exports = merge(common, {
             directory: "./src",
             watch: true,
         },
+        allowedHosts: "all",
         liveReload: true,
         compress: true,
     },

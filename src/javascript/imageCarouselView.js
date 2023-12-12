@@ -102,6 +102,9 @@ const ImageCarouselView = (imageCarouselItemViewsObject = {}) => {
         for (let i = 0; i < imageCount; i += 1) {
             const dotElement = document.createElement("span");
             dotElement.classList.add("dot");
+            if (i === 0) {
+                dotElement.classList.add("active-dot");
+            }
             dotElement.setAttribute("data-image-index", i.toString());
             component.appendChild(dotElement);
 

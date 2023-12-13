@@ -24,6 +24,17 @@
     align-items: center;
 }
 
+.image-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.image-item > img {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
 .secondary-container {
     display: flex;
 }

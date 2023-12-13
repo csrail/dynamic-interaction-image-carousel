@@ -1,9 +1,11 @@
 .hidden {
-    display: none;
+    opacity: 0;
+    transition: opacity 600ms 0s ease;
 }
 
 .visible {
-    display: block;
+    opacity: 1;
+    transition: opacity 2000ms 0s ease;
 }
 
 .right-arrow,
